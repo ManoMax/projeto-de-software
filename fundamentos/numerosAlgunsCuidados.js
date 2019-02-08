@@ -6,6 +6,12 @@ console.log("10" / 2)
 
 console.log("10.2" / 2)
 console.log("10,2" / 2)
+
+console.log('3' + 2) // String ganha
+console.log(typeof ('3' + 2))
+console.log('3' - 2)
+console.log(typeof ('3' - 2))
+
 console.log("Show!" * 2)
 console.log("Show!" + 2)
 
