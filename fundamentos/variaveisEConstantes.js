@@ -6,8 +6,7 @@ let b = 4
 console.log(a, b)
 
 // Isso abaixo é possível
-var a = 30
-// Embora não tenho motivo para isso
+var a = 30 // Embora não tenho motivo para isso
 b = 40
 // 'let b = 40' - Não é possível
 
