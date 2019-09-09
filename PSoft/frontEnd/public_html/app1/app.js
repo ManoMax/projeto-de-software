@@ -18,7 +18,7 @@ function handler(dados) {
     disciplinas.forEach((element, indice)  => {
         let p = document.createElement("p");
         $disciplinas.appendChild(p);
-        p.innerText = "Disciplina: " + disciplinas[indice].nome + " - Nota: " + disciplinas[indice].nota;
+        p.innerText = "Disciplina: " + disciplinas[indice].nome + ", Nota: " + disciplinas[indice].nota;
     });
 }
 fetch_disciplinas();
