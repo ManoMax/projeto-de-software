@@ -1,10 +1,6 @@
-console.log('app rodando!');
-
 let disciplinas = [];
-let $disciplinas = document.querySelector("div");
-let URL = 'https://lab01-projsw-ufcg.herokuapp.com/api';
+const URL = 'https://lab01-projsw-ufcg.herokuapp.com/api';
 
-let $button = document.getElementById("botao");
 let $mensagem = document.getElementById("mensagem");
 
 function fetch_disciplinas() {
@@ -18,11 +14,24 @@ function fetch_disciplinas() {
 
 function handler(dados) {
     disciplinas = dados;
+    let $disciplinas = document.getElementById("divDisciplina");
     $disciplinas.innerHTML = '';
     disciplinas.forEach((element, indice)  => {
+        let divDisciplina = document.createElement("div");
         let p = document.createElement("p");
-        $disciplinas.appendChild(p);
+        let botaoDelete = document.createElement("button");
+    
+        botaoDelete.innerText = "Apagar Disciplina";
+        botaoDelete.addEventListener('click', () => {
+            deleteDisciplina(disciplinas[indice].id);
+        }
+        );
         p.innerText = "Disciplina: " + disciplinas[indice].nome + ", Nota: " + disciplinas[indice].nota;
+    
+        divDisciplina.appendChild(p);
+        divDisciplina.appendChild(botaoDelete);      
+        
+        $disciplinas.appendChild(divDisciplina);
     });
 }
 
@@ -47,5 +56,26 @@ function save() {
     $mensagem.innerText = 'Salvando...';
 }
 
-fetch_disciplinas();
-$button.onclick = save;
+function deleteDisciplina(indice) {
+    fetch(URL + `/disciplinas/${indice}`, {
+        'method': 'DELETE',
+        'headers': {'Content-Type': 'application/json'}
+    })
+    .then(r => r.json())
+    .then(d => {
+        console.log(d);
+        $mensagem.innerText = 'Disciplina removida';
+        setTimeout(_ => {
+            $mensagem.innerText = '';
+        }, 2000);
+        fetch_disciplinas();
+    })
+    $mensagem.innerText = 'Removendo...';
+}
+
+(function init() {
+    console.log('app rodando!');
+    let $button = document.getElementById("botao");
+    $button.addEventListener('click', save);
+    fetch_disciplinas();
+}());
