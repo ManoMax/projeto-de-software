@@ -2,10 +2,12 @@ console.log('app rodando!');
 
 let disciplinas = [];
 let $disciplinas = document.querySelector("div");
+let URL = 'https://lab01-projsw-ufcg.herokuapp.com/api';
+
+let $button = document.getElementById("botao");
 
 function fetch_disciplinas() {
-    let URL = 'https://lab01-projsw-ufcg.herokuapp.com/api/disciplinas';
-    fetch(URL)
+    fetch(URL + '/disciplinas')
     .then(response => response.json())
     .then(dados => {
         console.log(dados);
@@ -23,4 +25,23 @@ function handler(dados) {
     });
 }
 
+function save() {
+    let nome = document.getElementById("nome").value;
+    let nota = document.getElementById("nota").value;
+    fetch(URL + '/disciplinas', 
+    {
+        'method': 'POST',
+        'body': `{"nome": "${nome}", "nota": ${nota}}`,
+        'headers': {'Content-Type': 'application/json'}
+    })
+    .then(r => {
+        r.json();
+        console.log(r);
+    })
+    .then(d => {
+        console.log(d);
+    })
+}
+
 fetch_disciplinas();
+$button.onclick = save;
