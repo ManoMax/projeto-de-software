@@ -2,6 +2,7 @@ console.log('app rodando!');
 
 let disciplinas = [];
 let $disciplinas = document.querySelector("div");
+
 function fetch_disciplinas() {
     let URL = 'https://lab01-projsw-ufcg.herokuapp.com/api/disciplinas';
     fetch(URL)
@@ -21,4 +22,5 @@ function handler(dados) {
         p.innerText = "Disciplina: " + disciplinas[indice].nome + ", Nota: " + disciplinas[indice].nota;
     });
 }
+
 fetch_disciplinas();
