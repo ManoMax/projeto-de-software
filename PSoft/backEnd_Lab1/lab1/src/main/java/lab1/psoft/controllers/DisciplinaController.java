@@ -1,11 +1,11 @@
-package psoft.manomax.lab1.controllers;
+package lab1.psoft.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import psoft.manomax.lab1.models.Disciplina;
-import psoft.manomax.lab1.services.DisciplinaServices;
+import lab1.psoft.models.Disciplina;
+import lab1.psoft.services.DisciplinaServices;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,4 @@
-package psoft.manomax.lab1.models;
+package lab1.psoft.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

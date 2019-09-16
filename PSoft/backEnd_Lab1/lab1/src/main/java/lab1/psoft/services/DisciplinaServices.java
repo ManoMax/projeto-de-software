@@ -1,7 +1,7 @@
-package psoft.manomax.lab1.services;
+package lab1.psoft.services;
 
 import org.springframework.stereotype.Service;
-import psoft.manomax.lab1.models.Disciplina;
+import lab1.psoft.models.Disciplina;
 
 import java.util.ArrayList;
 import java.util.Collections;
