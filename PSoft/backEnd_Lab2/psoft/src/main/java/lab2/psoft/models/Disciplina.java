@@ -2,8 +2,11 @@ package lab2.psoft.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+@Entity
 public class Disciplina implements Comparable<Disciplina> {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nome;
 	private double nota;

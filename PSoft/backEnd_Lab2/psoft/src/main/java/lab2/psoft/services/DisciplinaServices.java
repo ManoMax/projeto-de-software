@@ -11,8 +11,8 @@ import java.util.List;
 @Service
 public class DisciplinaServices {
 
-    private Integer id = 0;
-    private HashMap<Integer, Disciplina> disciplinas = new HashMap<Integer, Disciplina>();
+    @Autowired
+    private DisciplinaRespository disciplinaRespository;
 
     @PostConstruct
     public Disciplina addDisciplina(String nome, double nota) {
@@ -23,6 +23,7 @@ public class DisciplinaServices {
         return newDisciplina;
     }
 
+    @PostConstruct
     public Disciplina addDisciplina(Disciplina disciplina) {
         disciplina.setId(this.id);
         this.disciplinas.put(this.id, disciplina);
