@@ -1,62 +1,49 @@
 package lab2.psoft.services;
 
-import org.springframework.stereotype.Service;
-import lab2.psoft.models.Disciplina;
 
-import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.HashMap;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import lab2.psoft.models.Disciplina;
 
 @Service
 public class DisciplinaServices {
 
-    @Autowired
-    private DisciplinaRespository disciplinaRespository;
-
-    @PostConstruct
-    public Disciplina addDisciplina(String nome, double nota) {
-        Disciplina newDisciplina = new Disciplina(nome, nota);
-        newDisciplina.setId(id);
-        disciplinas.put(id, newDisciplina);
-        id++;
-        return newDisciplina;
-    }
+    // @Autowired
+    // private DisciplinaRespository disciplinaRespository;
 
     @PostConstruct
     public Disciplina addDisciplina(Disciplina disciplina) {
-        disciplina.setId(this.id);
-        this.disciplinas.put(this.id, disciplina);
-        id++;
-        return this.disciplinas.get(id - 1);
+        return null;
     }
 
+
     public HashMap<Integer, Disciplina> getDisciplinas() {
-        return this.disciplinas;
+        return null;
     }
 
     public Disciplina getDisciplina(Integer id) {
-        return disciplinas.get(id);
+        return null;
     }
 
     public Disciplina setNota(Disciplina disciplina, Integer id) {
-        return disciplinas.get(id).setNota(disciplina.getNota());
+        return null;
     }
 
     public Disciplina setNome(Disciplina disciplina, Integer id) {
-        return disciplinas.get(id).setNome(disciplina.getNome());
+        return null;
     }
 
     public void deleteDisciplina(Integer id) {
-        this.disciplinas.remove(id);
+        
     }
 
     public List<Disciplina> getRanking() {
-        List<Disciplina> list = new ArrayList<>();
-        for(int i = 0; i < this.disciplinas.size() ; i++) {
-            list.add(this.disciplinas.get(i));
-        }
-        Collections.sort(list);
-        return list;
+        return null;
     }
 }
