@@ -1,5 +1,10 @@
 package lab2.psoft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 @Entity
@@ -23,17 +28,12 @@ public class Disciplina implements Comparable<Disciplina> {
 		this.nota = nota;
 	}
 
-	public Disciplina(String nome, double nota) {
-		this.nome = nome;
-		this.nota = nota;
-	}
-
 	public Integer setId(Integer id) {
 		this.id = id;
 		return  id;
 	}
 
-	public Integer getId() {
+	public long getId() {
 		return this.id;
 	}
 
