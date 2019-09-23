@@ -1,0 +1,27 @@
+2019-09-23 15:37:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISCIPLINA (ID BIGINT NOT NULL, COMENTARIOS VARCHAR(255), LIKE[*] INTEGER, NOME VARCHAR(255), NOTA DOUBLE NOT NULL, PRIMARY KEY (ID)) "; expected "identifier"; SQL statement:
+create table disciplina (id bigint not null, comentarios varchar(255), like integer, nome varchar(255), nota double not null, primary key (id)) [42001-199]
+2019-09-23 15:41:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISCIPLINA (ID BIGINT NOT NULL, COMENTARIOS VARCHAR(255), LIKE[*] INTEGER, NOME VARCHAR(255), NOTA DOUBLE NOT NULL, PRIMARY KEY (ID)) "; expected "identifier"; SQL statement:
+create table disciplina (id bigint not null, comentarios varchar(255), like integer, nome varchar(255), nota double not null, primary key (id)) [42001-199]
+2019-09-23 15:41:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DISCIPLINA" not found; SQL statement:
+insert into disciplina (comentarios, like, nome, nota, id) values (?, ?, ?, ?, ?) [42102-199]
+2019-09-23 15:41:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DISCIPLINA" not found; SQL statement:
+insert into disciplina (comentarios, like, nome, nota, id) values (?, ?, ?, ?, ?) [42102-199]
+2019-09-23 15:52:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT DISCIPLINA0_.ID AS ID1_0_, DISCIPLINA0_.COMENTARIOS AS COMENTAR2_0_, DISCIPLINA0_.LIKE[*] AS LIKE3_0_, DISCIPLINA0_.NOME AS NOME4_0_, DISCIPLINA0_.NOTA AS NOTA5_0_ FROM DISCIPLINA DISCIPLINA0_ "; expected "identifier"; SQL statement:
+select disciplina0_.id as id1_0_, disciplina0_.comentarios as comentar2_0_, disciplina0_.like as like3_0_, disciplina0_.nome as nome4_0_, disciplina0_.nota as nota5_0_ from disciplina disciplina0_ [42001-199]
+2019-09-23 15:54:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISCIPLINA (ID BIGINT NOT NULL, COMENTARIOS VARCHAR(255), LIKE[*] INTEGER, NOME VARCHAR(255), NOTA DOUBLE NOT NULL, PRIMARY KEY (ID)) "; expected "identifier"; SQL statement:
+create table disciplina (id bigint not null, comentarios varchar(255), like integer, nome varchar(255), nota double not null, primary key (id)) [42001-199]
+2019-09-23 15:55:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT DISCIPLINA0_.ID AS ID1_0_, DISCIPLINA0_.COMENTARIOS AS COMENTAR2_0_, DISCIPLINA0_.LIKE[*] AS LIKE3_0_, DISCIPLINA0_.NOME AS NOME4_0_, DISCIPLINA0_.NOTA AS NOTA5_0_ FROM DISCIPLINA DISCIPLINA0_ "; expected "identifier"; SQL statement:
+select disciplina0_.id as id1_0_, disciplina0_.comentarios as comentar2_0_, disciplina0_.like as like3_0_, disciplina0_.nome as nome4_0_, disciplina0_.nota as nota5_0_ from disciplina disciplina0_ [42001-199]
+2019-09-23 15:58:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISCIPLINA (ID BIGINT NOT NULL, COMENTARIOS VARCHAR(255), LIKE[*] INTEGER, NOME VARCHAR(255), NOTA DOUBLE NOT NULL, PRIMARY KEY (ID)) "; expected "identifier"; SQL statement:
+create table disciplina (id bigint not null, comentarios varchar(255), like integer, nome varchar(255), nota double not null, primary key (id)) [42001-199]
+2019-09-23 15:58:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT DISCIPLINA0_.ID AS ID1_0_, DISCIPLINA0_.COMENTARIOS AS COMENTAR2_0_, DISCIPLINA0_.LIKE[*] AS LIKE3_0_, DISCIPLINA0_.NOME AS NOME4_0_, DISCIPLINA0_.NOTA AS NOTA5_0_ FROM DISCIPLINA DISCIPLINA0_ "; expected "identifier"; SQL statement:
+select disciplina0_.id as id1_0_, disciplina0_.comentarios as comentar2_0_, disciplina0_.like as like3_0_, disciplina0_.nome as nome4_0_, disciplina0_.nota as nota5_0_ from disciplina disciplina0_ [42001-199]

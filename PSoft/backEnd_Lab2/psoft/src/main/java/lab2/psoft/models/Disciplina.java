@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-
 @Entity
 public class Disciplina implements Comparable<Disciplina> {
 
@@ -19,13 +17,16 @@ public class Disciplina implements Comparable<Disciplina> {
 	private String comentarios;
 	private Integer like;
 
-	//public Disciplina() {
-	//}
+	public Disciplina() {
+		super();
+	}
 
-	@JsonCreator
+	
 	public Disciplina(String nome, double nota) {
 		this.nome = nome;
 		this.nota = nota;
+		this.comentarios = "";
+		this.like = 0;
 	}
 
 	public Integer setId(Integer id) {
