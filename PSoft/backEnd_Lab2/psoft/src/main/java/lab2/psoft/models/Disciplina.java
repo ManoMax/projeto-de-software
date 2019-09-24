@@ -15,7 +15,7 @@ public class Disciplina implements Comparable<Disciplina> {
 	private double nota;
 
 	private String comentarios;
-	private Integer like;
+	private Integer likes;
 
 	public Disciplina() {
 		super();
@@ -26,7 +26,7 @@ public class Disciplina implements Comparable<Disciplina> {
 		this.nome = nome;
 		this.nota = nota;
 		this.comentarios = "";
-		this.like = 0;
+		this.likes = 0;
 	}
 
 	public Integer setId(Integer id) {
