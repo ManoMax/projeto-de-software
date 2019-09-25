@@ -18,8 +18,6 @@ public class DisciplinaController {
     @Autowired
     private DisciplinaServices disciplinaServices;
 
-    //obrigatorio ter esse construtor, caso contrario chama um construtor
-	//default e o serviço fica null
 	public DisciplinaController(DisciplinaServices disciplinaServices) {
 		super();
 		this.disciplinaServices = disciplinaServices;
@@ -42,7 +40,9 @@ public class DisciplinaController {
 	public ResponseEntity<List<Disciplina>> getDisciplina() {
 		return new ResponseEntity<List<Disciplina>>(disciplinaServices.getDisciplinas(), HttpStatus.OK);
 	}
-    
+
+
+
     
 }
 
