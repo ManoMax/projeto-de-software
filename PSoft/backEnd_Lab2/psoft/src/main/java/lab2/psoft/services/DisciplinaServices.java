@@ -40,10 +40,6 @@ public class DisciplinaServices {
 		super();
 		this.disciplinasDAO = disciplinasDAO;
 	}
-	
-//    public Disciplina addDisciplina(Disciplina disciplina) {
-//        return disciplinasDAO.save(disciplina);
-//    }
 
     public List<Disciplina> getDisciplinas() {
         return disciplinasDAO.findAll();
@@ -52,10 +48,6 @@ public class DisciplinaServices {
     public Optional<Disciplina> getDisciplina(Long id) {
         return disciplinasDAO.findById(id);
     }
-
-//    public Disciplina setNome(Disciplina disciplina, long id) {
-//        return disciplinasDAO.getOne(id).setNome(disciplina.getNome());
-//    }
 
     public Disciplina setNota(Disciplina disciplina, long id) {
         return disciplinasDAO.getOne(id).setNota(disciplina.getNota());

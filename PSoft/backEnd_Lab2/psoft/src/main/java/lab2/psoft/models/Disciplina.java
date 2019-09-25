@@ -23,7 +23,6 @@ public class Disciplina implements Comparable<Disciplina> {
 		this.likes = 0;
 	}
 
-	
 	public Disciplina(String nome, double nota) {
 		this.nome = nome;
 		this.nota = nota;

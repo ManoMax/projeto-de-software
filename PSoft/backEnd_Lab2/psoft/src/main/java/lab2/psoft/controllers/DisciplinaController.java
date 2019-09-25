@@ -25,11 +25,6 @@ public class DisciplinaController {
 		this.disciplinaServices = disciplinaServices;
 	}
 	
-//	@PostMapping("/disciplinas")
-//	public ResponseEntity<Disciplina> addDisciplina(@RequestBody Disciplina disciplina) {
-//		return new ResponseEntity<Disciplina>(disciplinaServices.addDisciplina(disciplina), HttpStatus.CREATED);
-//	}
-	
 	@RequestMapping("/disciplinas/{id}")
 	public ResponseEntity<Disciplina> getProduto(@PathVariable Long id) {
 		Optional<Disciplina> disciplina = disciplinaServices.getDisciplina(id);
@@ -42,15 +37,6 @@ public class DisciplinaController {
 	public ResponseEntity<List<Disciplina>> getDisciplina() {
 		return new ResponseEntity<List<Disciplina>>(disciplinaServices.getDisciplinas(), HttpStatus.OK);
 	}
-
-//	@PutMapping("/disciplinas/nome/{id}")
-//	public ResponseEntity<Disciplina> setNomeDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
-//		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
-//		if (disciplinaSearched.isPresent()) {
-//			return new ResponseEntity<Disciplina>(disciplinaServices.setNome(disciplina, id), HttpStatus.OK);
-//		}
-//		return new ResponseEntity(HttpStatus.NOT_FOUND);
-//	}
 
 	@PutMapping("/disciplinas/nota/{id}")
 	public ResponseEntity<Disciplina> setNotaDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
