@@ -59,15 +59,14 @@ public class DisciplinaController {
 		return new ResponseEntity(HttpStatus.NOT_FOUND);
 	}
 
-//	@DeleteMapping("/v1/api/disciplinas/{id}")
-//	public ResponseEntity<Disciplina> deleteDisciplina(@PathVariable("id") Integer id) {
-//		if (disciplinaSearch(id) != null) {
-//			Disciplina searchedDisciplina = disciplinaServices.getDisciplina(id);
-//			disciplinaServices.deleteDisciplina(id);
-//			return new ResponseEntity<Disciplina>(searchedDisciplina, HttpStatus.OK);
-//		}
-//		return new ResponseEntity(HttpStatus.NOT_FOUND);
-//	}
+	@DeleteMapping("/disciplinas/{id}")
+	public ResponseEntity<Disciplina> deleteDisciplina(@PathVariable("id") long id) {
+		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
+		if (disciplinaSearched.isPresent()) {
+			return new ResponseEntity<Disciplina>(disciplinaServices.deleteDisciplina(id), HttpStatus.OK);
+		}
+		return new ResponseEntity(HttpStatus.NOT_FOUND);
+	}
     
 }
 
