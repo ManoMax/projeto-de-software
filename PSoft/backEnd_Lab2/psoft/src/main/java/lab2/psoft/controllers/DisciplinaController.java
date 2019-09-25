@@ -41,8 +41,33 @@ public class DisciplinaController {
 		return new ResponseEntity<List<Disciplina>>(disciplinaServices.getDisciplinas(), HttpStatus.OK);
 	}
 
+	@PutMapping("/disciplinas/{id}/nome")
+	public ResponseEntity<Disciplina> setNomeDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
+		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
+		if (disciplinaSearched.isPresent()) {
+			return new ResponseEntity<Disciplina>(disciplinaServices.setNome(disciplina, id), HttpStatus.OK);
+		}
+		return new ResponseEntity(HttpStatus.NOT_FOUND);
+	}
 
+	@PutMapping("/disciplinas/{id}/nota")
+	public ResponseEntity<Disciplina> setNotaDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
+		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
+		if (disciplinaSearched.isPresent()) {
+			return new ResponseEntity<Disciplina>(disciplinaServices.setNota(disciplina, id), HttpStatus.OK);
+		}
+		return new ResponseEntity(HttpStatus.NOT_FOUND);
+	}
 
+//	@DeleteMapping("/v1/api/disciplinas/{id}")
+//	public ResponseEntity<Disciplina> deleteDisciplina(@PathVariable("id") Integer id) {
+//		if (disciplinaSearch(id) != null) {
+//			Disciplina searchedDisciplina = disciplinaServices.getDisciplina(id);
+//			disciplinaServices.deleteDisciplina(id);
+//			return new ResponseEntity<Disciplina>(searchedDisciplina, HttpStatus.OK);
+//		}
+//		return new ResponseEntity(HttpStatus.NOT_FOUND);
+//	}
     
 }
 
