@@ -41,16 +41,16 @@ public class DisciplinaController {
 		return new ResponseEntity<List<Disciplina>>(disciplinaServices.getDisciplinas(), HttpStatus.OK);
 	}
 
-	@PutMapping("/disciplinas/{id}/nome")
-	public ResponseEntity<Disciplina> setNomeDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
-		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
-		if (disciplinaSearched.isPresent()) {
-			return new ResponseEntity<Disciplina>(disciplinaServices.setNome(disciplina, id), HttpStatus.OK);
-		}
-		return new ResponseEntity(HttpStatus.NOT_FOUND);
-	}
+//	@PutMapping("/disciplinas/nome/{id}")
+//	public ResponseEntity<Disciplina> setNomeDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
+//		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
+//		if (disciplinaSearched.isPresent()) {
+//			return new ResponseEntity<Disciplina>(disciplinaServices.setNome(disciplina, id), HttpStatus.OK);
+//		}
+//		return new ResponseEntity(HttpStatus.NOT_FOUND);
+//	}
 
-	@PutMapping("/disciplinas/{id}/nota")
+	@PutMapping("/disciplinas/nota/{id}")
 	public ResponseEntity<Disciplina> setNotaDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
 		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
 		if (disciplinaSearched.isPresent()) {

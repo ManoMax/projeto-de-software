@@ -53,9 +53,9 @@ public class DisciplinaServices {
         return disciplinasDAO.findById(id);
     }
 
-    public Disciplina setNome(Disciplina disciplina, long id) {
-        return disciplinasDAO.getOne(id).setNome(disciplina.getNome());
-    }
+//    public Disciplina setNome(Disciplina disciplina, long id) {
+//        return disciplinasDAO.getOne(id).setNome(disciplina.getNome());
+//    }
 
     public Disciplina setNota(Disciplina disciplina, long id) {
         return disciplinasDAO.getOne(id).setNota(disciplina.getNota());
