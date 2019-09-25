@@ -13,12 +13,10 @@ Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/). by @
 Especificações [aqui](https://raquelvl.github.io/psoft/material/back_hello.html).  by @RaquelLopes
 
 ### Laboratório 1
-// Requisições GET, POST, PUT em Spring-boot
-<br>Especificações sobre o backend [aqui](https://docs.google.com/document/d/e/2PACX-1vQYsle9B363IU3oDw6hJxn9diVd9-yLOUfCLFQCQehRkf4195xmaY5wjWHOQXGHTRkiv_j0Kfc-qFQq/pub). by @RaquelLopes
+Especificações sobre o backend [aqui](https://docs.google.com/document/d/e/2PACX-1vQYsle9B363IU3oDw6hJxn9diVd9-yLOUfCLFQCQehRkf4195xmaY5wjWHOQXGHTRkiv_j0Kfc-qFQq/pub). by @RaquelLopes
 <br>Especificações sobre o frontend [aqui](https://daltonserey.github.io/psoft/0-exercicios/1-frontend_api_raquel/#1). by @DaltonSerey
 
 ### Laboratório 2
-// Persistencia de dados em JPA
-<br>Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html). by @RaquelLopes
+Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html). by @RaquelLopes
 
 <p><i>Author: @ManoMax</i></p>
