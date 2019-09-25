@@ -27,8 +27,10 @@ public class DisciplinaServices {
         InputStream inputStream = ObjectMapper.class.getResourceAsStream("/json/disciplinas.json");
         try {
             List<Disciplina> disciplinas = mapper.readValue(inputStream, typeReference);
-            this.disciplinasDAO.saveAll(disciplinas);
-            System.out.println("Disciplina salva no BD");
+            if (disciplinasDAO.count() == 0) {
+                this.disciplinasDAO.saveAll(disciplinas);
+                System.out.println("Disciplina salva no BD");
+            }
         } catch (IOException e) {
             System.out.println("Não foi possível salvar as Disciplinas: " + e.getMessage());
         }
@@ -57,5 +59,11 @@ public class DisciplinaServices {
 
     public Disciplina setNota(Disciplina disciplina, long id) {
         return disciplinasDAO.getOne(id).setNota(disciplina.getNota());
+    }
+
+    public Disciplina deleteDisciplina(long id) {
+        Disciplina deletedDisciplina = disciplinasDAO.getOne(id);
+        disciplinasDAO.deleteById(id);
+        return deletedDisciplina;
     }
 }
