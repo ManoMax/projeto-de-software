@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import lab2.psoft.models.Disciplina;
 import lab2.psoft.services.DisciplinaServices;
 
+import javax.websocket.server.PathParam;
+
 
 @RestController
 public class DisciplinaController {
@@ -23,10 +25,10 @@ public class DisciplinaController {
 		this.disciplinaServices = disciplinaServices;
 	}
 	
-	@PostMapping("/disciplinas")
-	public ResponseEntity<Disciplina> addDisciplina(@RequestBody Disciplina disciplina) {
-		return new ResponseEntity<Disciplina>(disciplinaServices.addDisciplina(disciplina), HttpStatus.CREATED);
-	}
+//	@PostMapping("/disciplinas")
+//	public ResponseEntity<Disciplina> addDisciplina(@RequestBody Disciplina disciplina) {
+//		return new ResponseEntity<Disciplina>(disciplinaServices.addDisciplina(disciplina), HttpStatus.CREATED);
+//	}
 	
 	@RequestMapping("/disciplinas/{id}")
 	public ResponseEntity<Disciplina> getProduto(@PathVariable Long id) {
@@ -55,6 +57,15 @@ public class DisciplinaController {
 		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
 		if (disciplinaSearched.isPresent()) {
 			return new ResponseEntity<Disciplina>(disciplinaServices.setNota(disciplina, id), HttpStatus.OK);
+		}
+		return new ResponseEntity(HttpStatus.NOT_FOUND);
+	}
+
+	@PutMapping("/disciplinas/comentarios/{id}")
+	public ResponseEntity<Disciplina> setComentarioDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
+		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
+		if (disciplinaSearched.isPresent()) {
+			return new ResponseEntity<Disciplina>(disciplinaServices.setComentario(disciplina, id), HttpStatus.OK);
 		}
 		return new ResponseEntity(HttpStatus.NOT_FOUND);
 	}

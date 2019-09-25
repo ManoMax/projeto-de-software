@@ -41,9 +41,9 @@ public class DisciplinaServices {
 		this.disciplinasDAO = disciplinasDAO;
 	}
 	
-    public Disciplina addDisciplina(Disciplina disciplina) {
-        return disciplinasDAO.save(disciplina);
-    }
+//    public Disciplina addDisciplina(Disciplina disciplina) {
+//        return disciplinasDAO.save(disciplina);
+//    }
 
     public List<Disciplina> getDisciplinas() {
         return disciplinasDAO.findAll();
@@ -69,5 +69,10 @@ public class DisciplinaServices {
         Disciplina deletedDisciplina = disciplinasDAO.getOne(id);
         disciplinasDAO.deleteById(id);
         return deletedDisciplina;
+    }
+
+    public Disciplina setComentario(Disciplina disciplina, long id) {
+        disciplinasDAO.save(disciplinasDAO.getOne(id).setComentarios(disciplina.getComentarios()));
+        return disciplinasDAO.getOne(id);
     }
 }

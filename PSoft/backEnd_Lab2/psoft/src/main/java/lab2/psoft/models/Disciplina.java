@@ -19,8 +19,8 @@ public class Disciplina implements Comparable<Disciplina> {
 
 	public Disciplina() {
 		super();
-//		this.comentarios = "";
-//		this.likes = 0;
+		this.comentarios = "";
+		this.likes = 0;
 	}
 
 	
@@ -67,7 +67,7 @@ public class Disciplina implements Comparable<Disciplina> {
 	}
 
 	public Disciplina setComentarios(String comentarios) {
-		this.comentarios = "\n" + comentarios;
+		this.comentarios += System.lineSeparator() + comentarios;
 		return this;
 	}
 
