@@ -61,6 +61,10 @@ public class DisciplinaServices {
         return disciplinasDAO.getOne(id).setNota(disciplina.getNota());
     }
 
+    public Disciplina addLikes(long id) {
+        return disciplinasDAO.getOne(id).setLikes(1);
+    }
+
     public Disciplina deleteDisciplina(long id) {
         Disciplina deletedDisciplina = disciplinasDAO.getOne(id);
         disciplinasDAO.deleteById(id);

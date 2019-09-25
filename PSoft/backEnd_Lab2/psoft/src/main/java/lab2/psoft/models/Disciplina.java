@@ -15,10 +15,12 @@ public class Disciplina implements Comparable<Disciplina> {
 	private double nota;
 
 	private String comentarios;
-	private Integer likes;
+	private int likes;
 
 	public Disciplina() {
 		super();
+//		this.comentarios = "";
+//		this.likes = 0;
 	}
 
 	
@@ -46,6 +48,14 @@ public class Disciplina implements Comparable<Disciplina> {
 		return this.nome;
 	}
 
+	public String getComentarios() {
+		return this.comentarios;
+	}
+
+	public int getLikes() {
+		return this.likes;
+	}
+
 	public Disciplina setNome(String nome) {
 		this.nome = nome;
 		return this;
@@ -53,6 +63,16 @@ public class Disciplina implements Comparable<Disciplina> {
 
 	public Disciplina setNota(double nota) {
 		this.nota = nota;
+		return this;
+	}
+
+	public Disciplina setComentarios(String comentarios) {
+		this.comentarios = "\n" + comentarios;
+		return this;
+	}
+
+	public Disciplina setLikes(int likes) {
+		this.likes += likes;
 		return this;
 	}
 
