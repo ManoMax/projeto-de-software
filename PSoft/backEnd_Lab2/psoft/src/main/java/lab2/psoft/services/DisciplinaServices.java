@@ -2,10 +2,12 @@ package lab2.psoft.services;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.PostConstruct;
 
+import lab2.psoft.models.DisciplinaDTO;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -41,10 +43,15 @@ public class DisciplinaServices {
 		this.disciplinasDAO = disciplinasDAO;
 	}
 
-    public List<Disciplina> getDisciplinas() {
-        return disciplinasDAO.findAll();
-    }
+    public List<DisciplinaDTO> getDisciplinas() {
+        List<Disciplina> listDisciplinas = disciplinasDAO.findAll();
+        List<DisciplinaDTO> listDTO = new ArrayList<DisciplinaDTO>();
 
+        for (Disciplina disciplina : listDisciplinas) {
+            listDTO.add(new DisciplinaDTO(disciplina.getId(), disciplina.getNome()));
+        }
+        return listDTO;
+    }
     public Optional<Disciplina> getDisciplina(Long id) {
         return disciplinasDAO.findById(id);
     }
@@ -52,17 +59,6 @@ public class DisciplinaServices {
     public Disciplina setNota(Disciplina disciplina, long id) {
         return disciplinasDAO.getOne(id).setNota(disciplina.getNota());
     }
-
-    public Disciplina addLikes(long id) {
-        return disciplinasDAO.getOne(id).setLikes(1);
-    }
-
-    public Disciplina deleteDisciplina(long id) {
-        Disciplina deletedDisciplina = disciplinasDAO.getOne(id);
-        disciplinasDAO.deleteById(id);
-        return deletedDisciplina;
-    }
-
     public Disciplina setComentario(Disciplina disciplina, long id) {
         disciplinasDAO.save(disciplinasDAO.getOne(id).setComentarios(disciplina.getComentarios()));
         return disciplinasDAO.getOne(id);
