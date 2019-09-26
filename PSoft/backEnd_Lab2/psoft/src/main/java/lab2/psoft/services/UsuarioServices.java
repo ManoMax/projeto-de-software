@@ -5,6 +5,8 @@ import lab2.psoft.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioServices {
 
@@ -18,5 +20,9 @@ public class UsuarioServices {
 
     public Usuario addUsuario(Usuario usuario) {
         return usuariosDAO.save(usuario);
+    }
+
+    public Optional<Usuario> getUsuario(String email) {
+        return this.usuariosDAO.findByEmail(email);
     }
 }
