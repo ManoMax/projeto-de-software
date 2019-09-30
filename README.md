@@ -21,4 +21,7 @@ Especificações sobre o backend [aqui](https://docs.google.com/document/d/e/2PA
 ### Laboratório 2 (Permancencia de Dados, usando JPA)
 Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html). by @RaquelLopes
 
+### OO JavaScrip
+Especificações sobre [aqui](https://daltonserey.github.io/psoft/2.3-javascript/oo-javascript/#20). by @DaltonSerey
+
 <p><i>Author: @ManoMax</i></p>
