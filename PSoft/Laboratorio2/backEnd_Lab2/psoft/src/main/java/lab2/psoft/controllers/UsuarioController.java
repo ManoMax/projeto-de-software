@@ -32,6 +32,4 @@ public class UsuarioController {
         return new ResponseEntity<Usuario>(usuarioServices.addUsuario(usuario), HttpStatus.OK);
     }
 
-
-
 }

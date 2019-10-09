@@ -32,10 +32,7 @@ public class LoginController {
         Optional<Usuario> authUsuario = usuariosService.getUsuario(usuario.getEmail());
 
         // verificacoes
-        if (authUsuario.isEmpty()) {
-            throw new ServletException("Usuario nao encontrado!");
-        }
-
+        verificaExistencia(usuario);
         verificaSenha(usuario, authUsuario);
 
         String token = jwtService.geraToken(authUsuario.get().getEmail());
@@ -44,6 +41,12 @@ public class LoginController {
 
     }
 
+    private void verificaExistencia(Usuario usuario) throws ServletException {
+    	if (!usuariosService.exist(usuario)) {
+            throw new ServletException("Usuario nao encontrado!");
+        }
+    }
+    
     private void verificaSenha(Usuario usuario, Optional<Usuario> authUsuario) throws ServletException {
         if (!authUsuario.get().getSenha().equals(usuario.getSenha())) {
             throw new ServletException("Senha invalida!");

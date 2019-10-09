@@ -11,9 +11,9 @@ import java.util.Optional;
 public class UsuarioServices {
 
     @Autowired
-    private UsuariosRepository<Usuario, Long> usuariosDAO;
+    private UsuariosRepository<Usuario, String> usuariosDAO;
 
-    public UsuarioServices(UsuariosRepository<Usuario, Long> usuariosDAO) {
+    public UsuarioServices(UsuariosRepository<Usuario, String> usuariosDAO) {
         super();
         this.usuariosDAO = usuariosDAO;
     }
@@ -25,4 +25,10 @@ public class UsuarioServices {
     public Optional<Usuario> getUsuario(String email) {
         return this.usuariosDAO.findByEmail(email);
     }
+    
+    public boolean exist(Usuario usuario) {
+		Optional<Usuario> user = usuariosDAO.findById(usuario.getEmail());
+	
+		return user.isPresent();
+	}
 }
