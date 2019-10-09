@@ -21,8 +21,9 @@ Especificações sobre o backend [aqui](https://docs.google.com/document/d/e/2PA
 <br>Especificações sobre o frontend [aqui](https://daltonserey.github.io/psoft/0-exercicios/1-frontend_api_raquel/#1). by @DaltonSerey
 
 ### Laboratório 2
-##### (Permancencia de Dados, usando JPA)
-Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html). by @RaquelLopes
+##### (Permancencia de Dados, usando JPA e JWT)
+Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html)
+e [aqui](https://raquelvl.github.io/psoft/material/back_JWT_exemplo.html). by @RaquelLopes
 
 ### OO JavaScrip
 Especificações sobre [aqui](https://daltonserey.github.io/psoft/2.3-javascript/oo-javascript/#1). by @DaltonSerey
