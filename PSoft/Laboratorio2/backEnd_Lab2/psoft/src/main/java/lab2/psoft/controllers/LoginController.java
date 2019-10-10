@@ -40,7 +40,7 @@ public class LoginController {
         return new LoginResponse(token);
 
     }
-
+    
     private void verificaExistencia(Usuario usuario) throws ServletException {
     	if (!usuariosService.exist(usuario)) {
             throw new ServletException("Usuario nao encontrado!");

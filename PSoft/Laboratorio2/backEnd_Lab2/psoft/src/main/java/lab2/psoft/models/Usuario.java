@@ -31,13 +31,13 @@ public class Usuario {
         return this.senha;
     }
 
-    public void setEmail() {
+    public void setEmail(String email) {
         this.email = email;
     }
-    public void setNome() {
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    public void setSenha() {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 }
