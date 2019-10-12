@@ -12,14 +12,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import javax.servlet.ServletException;
 
 @RestController
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     @Autowired
@@ -32,11 +35,17 @@ public class UsuarioController {
         this.jwtService = jwtService;
     }
 
-    @PostMapping("/usuarios")
+    @PostMapping("")
     public ResponseEntity<Usuario> addUsuario(@RequestBody Usuario usuario) {
         return new ResponseEntity<Usuario>(usuarioServices.addUsuario(usuario), HttpStatus.OK);
     }
     
+    @RequestMapping("/list")
+	public ResponseEntity<Collection<Usuario>>  getUsuarios(){
+		return  new ResponseEntity<Collection<Usuario>>(usuarioServices.getUsuarios(),HttpStatus.OK);
+	}
+
+    /**
     @DeleteMapping("/auth/usuarios/{email}")
 	public ResponseEntity<Usuario> removeUsuario(@PathVariable String email, @RequestHeader("Authorization") String header) {
 		if(usuarioServices.getUsuario(email).get() == null)
@@ -51,7 +60,7 @@ public class UsuarioController {
 		}
 		//usuario nao tem permissao
 		return new ResponseEntity<Usuario>(HttpStatus.UNAUTHORIZED);
-	}
+	}*/
 
 
 }

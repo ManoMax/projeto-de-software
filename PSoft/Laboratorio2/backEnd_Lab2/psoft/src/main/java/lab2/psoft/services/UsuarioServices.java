@@ -5,6 +5,7 @@ import lab2.psoft.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Optional;
 
 @Service
@@ -30,5 +31,9 @@ public class UsuarioServices {
 		Optional<Usuario> user = usuariosDAO.findById(usuario.getEmail());
 	
 		return user.isPresent();
+	}
+
+	public Collection<Usuario> getUsuarios() {
+		return usuariosDAO.findAll();
 	}
 }
