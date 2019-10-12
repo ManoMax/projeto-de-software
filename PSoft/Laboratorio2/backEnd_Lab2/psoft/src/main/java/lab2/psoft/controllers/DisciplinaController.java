@@ -12,9 +12,6 @@ import lab2.psoft.models.Disciplina;
 import lab2.psoft.models.DisciplinaDTO;
 import lab2.psoft.services.DisciplinaServices;
 
-import javax.websocket.server.PathParam;
-
-
 @RestController
 public class DisciplinaController {
 
@@ -38,7 +35,7 @@ public class DisciplinaController {
 		return new ResponseEntity<List<DisciplinaDTO>>(disciplinaServices.getDisciplinas(), HttpStatus.OK);
 	}
 
-
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@PutMapping("/disciplinas/nota/{id}")
 	public ResponseEntity<Disciplina> setNotaDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
 		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);
@@ -47,6 +44,8 @@ public class DisciplinaController {
 		}
 		return new ResponseEntity(HttpStatus.NOT_FOUND);
 	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@PutMapping("/disciplinas/comentarios/{id}")
 	public ResponseEntity<Disciplina> setComentarioDisciplina(@PathVariable("id") long id, @RequestBody Disciplina disciplina) {
 		Optional<Disciplina> disciplinaSearched = disciplinaServices.getDisciplina(id);

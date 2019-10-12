@@ -14,7 +14,7 @@ public class PsoftApplication {
 	public FilterRegistrationBean<FiltroToken> filterJwt() {
 		FilterRegistrationBean<FiltroToken> filterRB = new FilterRegistrationBean<FiltroToken>();
 		filterRB.setFilter(new FiltroToken());
-		filterRB.addUrlPatterns("/api/produtos", "/auth/usuarios");
+		filterRB.addUrlPatterns("/api/v1/auth/usuarios/**");
 		return filterRB;
 	}
 	

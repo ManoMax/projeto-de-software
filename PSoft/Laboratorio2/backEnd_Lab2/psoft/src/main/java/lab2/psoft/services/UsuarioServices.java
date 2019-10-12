@@ -27,6 +27,12 @@ public class UsuarioServices {
         return this.usuariosDAO.findByEmail(email);
     }
     
+    public Usuario removeUsuario(String email) {
+    	Usuario usuario = usuariosDAO.findByEmail(email).get();
+    	usuariosDAO.deleteById(email);
+    	return usuario;
+    }
+    
     public boolean exist(Usuario usuario) {
 		Optional<Usuario> user = usuariosDAO.findById(usuario.getEmail());
 	
