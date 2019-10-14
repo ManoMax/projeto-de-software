@@ -29,3 +29,5 @@ e [aqui](https://raquelvl.github.io/psoft/material/back_JWT_exemplo.html). by @R
 Especificações sobre [aqui](https://daltonserey.github.io/psoft/2.3-javascript/oo-javascript/#1). by @DaltonSerey
 
 <p><i>Author: @ManoMax</i></p>
+<p><i>Author: @El braboo</i></p>
+
