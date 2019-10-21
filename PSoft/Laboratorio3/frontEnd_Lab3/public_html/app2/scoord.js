@@ -7,12 +7,12 @@ function disciplina(_id, _nome, _creditos, _pre_requisitos) {
 	let professor = null;
 	let pre_requisitos = _pre_requisitos;
 	return {
-		id: () => id,
 		creditos: creditos,
+		pre_requisitos: pre_requisitos,
+		id: () => id,
 		get_nome: () => nome,
 		get_creditos: () => creditos,
 		get_professor: () => professor,
-		pre_requisitos: pre_requisitos,
 		set_nome: (_nome) => nome = _nome,
 		set_professor: (_professor) => professor = _professor
 	}
