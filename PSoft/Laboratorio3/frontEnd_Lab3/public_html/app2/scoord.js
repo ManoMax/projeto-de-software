@@ -11,12 +11,16 @@ function create_turma(id, nome, periodo, estudantes) {
 		getProfessor: () => _professor,
 		getEstudantes: () => _estudantes,
 		setEstudante: function (estudante) {
+			let disponivel = true;
 			_estudantes.forEach((element, index) => {
-				if (estudante.getMatricula() == element.getMatricula()) {
-					return null;
+				if (estudante.matricula == element.matricula) {
+					disponivel = false;
+					return false;
 				};
 			});
-			_estudantes.push(estudante);
+			if (disponivel) {
+				_estudantes.push(estudante);
+			}
 		},
 		setProfessor: (professor) => _professor = professor
 	}
@@ -27,17 +31,14 @@ console.log(t1.getNome());
 console.log(t1.getEstudantes());
 t1.setEstudante(
 	{matricula: '123',
-	nome: 'Malucao',
-	getMatricula: () => this.matricula});
+	nome: 'Malucao'});
 console.log(t1.getEstudantes());
 t1.setEstudante(
 	{matricula: '123',
-	nome: 'Outro Maluco',
-	getMatricula: () => this.matricula});
+	nome: 'Outro Maluco'});
 console.log(t1.getEstudantes());
 t1.setEstudante(
 	{matricula: '124',
-	nome: 'Esse vai',
-	getMatricula: () => this.matricula});
+	nome: 'Esse vai'});
 console.log(t1.getEstudantes());
 
