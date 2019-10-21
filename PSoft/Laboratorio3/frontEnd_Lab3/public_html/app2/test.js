@@ -1,17 +1,41 @@
 let assert = require('assert');
+let disciplina = require('./scoord').disciplina;
 
-describe('métodos de Array', function() {
-  it('reverse inverte ordem dos elementos', function(){
-    let a = [1, 10, 3, 5];
-    assert.deepEqual([5, 3, 10, 1], a.reverse());
-  });
-  it('map cria novo array a partir de função de mapeamento', function(){
-    let a = [1, 10, 3, 5];
-    assert.deepEqual([10, 100, 30, 50], a.map(e => 10 * e));
-    assert.deepEqual([true, false, true, true], a.map(e => e % 2 != 0));
-  });
-  it('filter cria novo array com elementos filtrados', function(){
-    let a = [1, 10, 3, 5];
-    assert.deepEqual([1, 3, 5], a.filter(e => e % 2 != 0));
-  });
+describe('factory Disciplina', function() {
+  let d0;
+
+    before(async () => {
+        d0 = disciplina('prog1', 'Programação 1', 4, []);
+    })
+
+    it('deve criar disciplinas distintas a cada invocação', function(){
+        d0 = disciplina('prog1', 'Programação 1', 4, []);
+        d1 = disciplina('prog1', 'Programação 1', 4, []);
+        d2 = disciplina('prog1', 'Programação 1', 4, []);
+        assert.notEqual(d0, d1);
+        assert.notEqual(d0, d2);
+        assert.notEqual(d1, d2);
+    });
+
+    it('deve reter os dados de inicialização', function(){
+        assert.equal('prog1', d0.id());
+        assert.equal('Programação 1', d0.get_nome());
+        assert.equal(4, d0.creditos);
+        assert.deepEqual([], d0.pre_requisitos);
+    });
+
+    it('deve permitir atualização de nome', function(){
+        d0.set_nome('Programação de Computadores I')
+        assert.equal('prog1', d0.id());
+        assert.equal('Programação de Computadores I', d0.get_nome());
+        assert.deepEqual([], d0.pre_requisitos);
+    });
+
+    it('não deve permitir atualização de id via set_id', function(){
+        assert.throws(function () {
+            d0.set_id('outro')
+        }, TypeError);
+        assert.equal('prog1', d0.id());
+    });
+
 });
