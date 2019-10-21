@@ -37,5 +37,5 @@ describe('factory Disciplina', function() {
         }, TypeError);
         assert.equal('prog1', d0.id());
     });
-
 });
+
