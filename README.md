@@ -25,7 +25,7 @@ Especificações sobre o backend [aqui](https://docs.google.com/document/d/e/2PA
 Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/aulas/lab2_backend.html)
 e [aqui](https://raquelvl.github.io/psoft/material/back_JWT_exemplo.html). by @RaquelLopes
 
-### OO JavaScrip
+### OO JavaScript
 Especificações sobre [aqui](https://daltonserey.github.io/psoft/2.3-javascript/oo-javascript/#1). by @DaltonSerey
 
 <p><i>Author: @ManoMax</i></p>
