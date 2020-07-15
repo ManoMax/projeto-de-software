@@ -1,10 +1,6 @@
 # Estudo Linguagem Web
 #### Universidade Federal de Campina Grande
 
-## Udemy
-
-Vídeo-aulas com separação de conteúdo web [aqui](https://www.udemy.com/share/1013eSBEscdFxQQHQ=/).
-
 ## Projeto de Software
 
 ### Conteúdo Teórico
