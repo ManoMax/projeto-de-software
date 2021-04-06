@@ -3,6 +3,10 @@
 
 ## Projeto de Software
 
+<p>
+   Exercícios práticos da Disciplina de Projeto de Software.
+</p>
+
 ### Conteúdo Teórico
 Especificações sobre o backend [aqui](https://raquelvl.github.io/psoft/). by [@raquelvl](https://github.com/raquelvl)
 <br>Especificações sobre o frontend [aqui](https://daltonserey.github.io/psoft/). by [@DaltonSerey](https://github.com/daltonserey)
